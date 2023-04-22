@@ -71,6 +71,20 @@ git push -u origin master // 僅限第一次輸入，往後只需要輸入 git p
 
 ## 其他可能的狀況
 
+---自己添加的問題測試與解決紀錄
+Q：git push時卡住 ( 終端機畫面停在那邊，不報錯也不自動退出 ）
+A：試著清除掉原本設定的上游 URL 重新設定一次看看。
+`git remote rm origin`
+`git remote add origin [GitHub Repositories Https Url]`
+`git push --set-upstream origin master`
+這邊上游分支名稱有改成 master ，是為了配合本地端是 master。兩邊都改成 main 也可以，但總之兩邊名稱要一樣才能成功部署。
+成功的話會出現
+```
+已將 “master” 分支設定為追蹤 “origin/master”。
+Everything up-to-date
+```
+---自己添加的問題測試與解決紀錄
+
 Q：Mac 環境下輸入 `npm install -g gulp` 時出現「`Permission denied`」等字眼。
 
 A：由於 Mac 在環境上的安裝是會比較嚴格的，當出現「`Permission denied`」時，可以在指令前面加上 `sudo` (`sudo npm install -g gulp`)
